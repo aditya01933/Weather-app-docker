@@ -48,6 +48,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'better_errors'
+  gem 'rspec-rails', '~> 3.6'
   gem 'hirb'
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
