@@ -1,24 +1,35 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Setup:
 
-Things you may want to cover:
+To setup app run -
 
-* Ruby version
+> make build
+> make import_cities
 
-* System dependencies
+Database:
+* No database required as static data can be indexed into ES by a rake task.
 
-* Configuration
+Sidekiq:
+* Not using sidekiq anywhere currently but added as wanted to implement background jobs for some processes.
+* Check Improvement section below to know more about sidekiq usage.
 
-* Database creation
+Redis:
+* As Cache store
 
-* Database initialization
+Elastic search:
+* Search engine for finding city ids for acurate result from openweather apis.
 
-* How to run the test suite
+Improvements:
 
-* Services (job queues, cache servers, search engines, etc.)
+* Improve script to import json file into Elastic search.
 
-* Deployment instructions
+* Test cases
 
-* ...
+* Currently working only on city name, country can be added.
+
+* Optimizing import query with sidekiq background jobs.
+
+* Optimizing response time by implementing cache miss in background job.
+
+* Cache frequently used cities by analying ES search counts and running cron job to serve faster.
