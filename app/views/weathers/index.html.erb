@@ -1,0 +1,9 @@
+<%= form_tag(weathers_path, method: :get) do %>
+  Counrty: <%= text_field_tag :country %> 
+  City: <%= text_field_tag :city %>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
+<br \>
+<% if @weather %>
+  <%= @weather %>
+<%end%>  
